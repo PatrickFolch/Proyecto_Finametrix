@@ -1,0 +1,20 @@
+{
+  "name": "proyecto-finametrix",
+  "description": "",
+  "main": "",
+  "authors": [
+    "Patrick_Folch <patrickfolch2@gmail.com>"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/PatrickFolch/Proyecto_Finametrix",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^4.1.2"
+  }
+}
