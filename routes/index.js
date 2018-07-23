@@ -1,19 +1,14 @@
 var express = require('express');
 var router = express.Router();
-const UploadService=require('../service/uploadService')
+const UploadService = require('../services/uploadService')
+const CsvTojsonService = require('../services/csvToJsonService')
+//const CsvController = require('../controllers/csvController')
+//const CsvColumnService = require('../services/csvColumnService')
+const CheckDataService= require('../services/checkDataService')
 
 let uploadService=new UploadService;
 let upload=uploadService.up()
-/*const storage= Multer.diskStorage({
-  destination:(req,file,cb)=>{
-    cb(null,'public/images');
-  },
-  filename:(req,file,cb)=>{
-    cb(null, file.originalname);
-  }
-});
 
-const Upload = Multer({storage})*/
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -21,6 +16,12 @@ router.get('/', function(req, res, next) {
 });
 
 router.post('/upload',upload.single('file'),(req,res,next)=>{
-  res.json(req.file)
-})
+  let csvTojsonService = new CsvTojsonService(req.file.path)
+  csvTojsonService.csvTojson()
+  .then((data)=>{
+    res.json(data);
+    });
+   
+  });
+  
 module.exports = router;
