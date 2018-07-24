@@ -19,15 +19,17 @@ const csv=require('csvtojson')
                         cabecera++;
                       }     
                     }
-                    console.log("lineas de cabecera:"+ cabecera);
-
+                    //console.log("lineas de cabecera:"+ cabecera);
+                    jsonObj.lcabeceras = cabecera;
                     resolve(jsonObj);
+                    
                 })
                 .catch((err)=>{
                     console.error(err);
                     reject(err)
                 });
-              
+                
+                
             })
     
         }
