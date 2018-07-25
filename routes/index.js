@@ -3,7 +3,7 @@ var router = express.Router();
 const UploadService = require('../services/uploadService')
 const CsvTojsonService = require('../services/csvToJsonService')
 const CsvController = require('../controllers/csvController')
-
+const CalcService = require('../services/calcService')
 
 let uploadService=new UploadService;
 let upload=uploadService.up()
@@ -22,7 +22,8 @@ router.post('/upload',upload.single('file'),(req,res,next)=>{
    //console.log(data);
   let csvController= new CsvController(req,res,next)
   csvController.index(data,data.lcabeceras);  
-
+  let calcService = new CalcService(data,data.lcabeceras);
+  calcService.calcRent()  
     });
    
   });
