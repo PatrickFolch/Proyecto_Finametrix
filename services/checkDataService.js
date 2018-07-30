@@ -34,15 +34,17 @@ class checkDataService
                 }
                 else
                 {
-                    correctas.push({"linea":i,"correctas":lineas[i].fileld2})
+                    correctas.push(lineas[i])
                 }
                 
             }
+            console.log(typeof(correctas))
             resolve({
             " resultado": "ok",
             " nº total de elementos":this.jsonObject.length,
             " nº de elementos correctos":correctas.length,
-            " elementos erroneos":errores
+            " elementos erroneos":errores,
+            "objetoCo": correctas
         });
             reject('error');
         })

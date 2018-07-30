@@ -1,5 +1,6 @@
 const Controller = require('./controller');
 const CheckDataService = require('../services/checkDataService')
+let SaveDataController = require('./saveDataController')
 
 class CsvController extends Controller
 {
@@ -12,6 +13,10 @@ class CsvController extends Controller
         let checkDataService = new CheckDataService(data,cabecera);
         checkDataService.checkData()
         .then(datas=>{
+            
+        let saveDataController = new SaveDataController()
+        saveDataController.saveDataVl(datas.objetoCo)
+            //correctas
         this.res.json(datas)
     })
     
