@@ -25,12 +25,14 @@ class checkDataService
                 
                 if(fecha.test(lineas[i].field3)==false)
                 {
-                    errores.push({"linea": i, "fecha":lineas[i].field3});
+                    errores.push({linea:i, error:"error en formato de fechas: "+lineas[i].field3})
+                    // errores.push({"linea": i, "fecha":lineas[i].field3});
                 }
                 
                 if(precio.test(lineas[i].field4)==false)
                 {
-                    errores.push({"linea":i, "numeros con decimales":lineas[i].field4})
+                    errores.push({linea:i, error:"error en formato decimal: "+lineas[i].field4})
+                    //errores.push({"linea":i, "numeros con decimales":lineas[i].field4})
                 }
                 else
                 {
@@ -40,10 +42,10 @@ class checkDataService
             }
             console.log(typeof(correctas))
             resolve({
-            " resultado": "ok",
-            " nº total de elementos":this.jsonObject.length,
-            " nº de elementos correctos":correctas.length,
-            " elementos erroneos":errores,
+            "resultado": "ok",
+            "totalelementos":this.jsonObject.length,
+            "nCorrectos":correctas.length,
+            "elementoserroneos":errores,
             "objetoCo": correctas
         });
             reject('error');

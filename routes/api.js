@@ -13,7 +13,7 @@ router.get('/performance', function(req, res, next) {
     .then((data)=>{
       let result =  {}
       let calcRentService = new CalcRentService(data);
-      result.rentavilidad = calcRentService.calcRent(req.query.dateFrom, req.query.dateTo);
+      result.rentabilidad = calcRentService.calcRent(req.query.dateFrom, req.query.dateTo);
       
       let calcVolService = new CalcVolService(data)
       result.volatibilidad = calcVolService.calcVol(req.query.dateFrom, req.query.dateTo);

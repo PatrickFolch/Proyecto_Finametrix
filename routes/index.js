@@ -21,10 +21,10 @@ router.post('/upload',upload.single('file'),(req,res,next)=>{
   .then((data)=>{
     //console.log("cabecerarecibida"+data.lcabeceras);
    //console.log(data);
-  let calcRentService = new CalcRentService(data,data.lcabeceras);
-  calcRentService.calcRent()
-  let calcVolService = new CalcVolService(data,data.lcabeceras);
-  calcVolService.calcVol()  
+  //let calcRentService = new CalcRentService(data,data.lcabeceras);
+  //calcRentService.calcRent()
+  //let calcVolService = new CalcVolService(data,data.lcabeceras);
+  //calcVolService.calcVol()  
   let csvController= new CsvController(req,res,next)
   csvController.index(data,data.lcabeceras);  
   
