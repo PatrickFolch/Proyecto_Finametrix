@@ -26,7 +26,7 @@ router.post('/upload',upload.single('file'),(req,res,next)=>{
   //let calcVolService = new CalcVolService(data,data.lcabeceras);
   //calcVolService.calcVol()  
   let csvController= new CsvController(req,res,next)
-  csvController.index(data,data.lcabeceras);  
+  csvController.index(data);  
   
     });
    

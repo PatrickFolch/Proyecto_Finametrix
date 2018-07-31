@@ -1,10 +1,20 @@
-{{#if errores}}
-    <h3>ERRORES</h3>
-    {{#each errores}}
-        <p>-----------------------------------------------------------</p>
-        {{linea}}
-        {{error}}
-    {{/each}}
-{{/if}}
+ <div class="container-fluid"> 
+     <div class="row">
+        <div class="col-md-12">
+            <h3>Nº TOTAL DE ARCHIVOS</h3>
+                {{elemProcesados}}
+            <h3>CORRECTOS</h3>
+                {{elemCorrectos}}
+            {{#if errores}}
+                <h3>ERRORES</h3>
+                {{#each errores}}
+                    <p>-----------------------------------------------------------</p>
+                    error en linea: {{linea}}
+                    {{error}}
+                {{/each}}
+            {{/if}}
+        </div>
+    </div>
+</div>
 
    

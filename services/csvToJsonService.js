@@ -20,7 +20,7 @@ const csv=require('csvtojson')
                       }     
                     }
                     //console.log("lineas de cabecera:"+ cabecera);
-                    jsonObj.lcabeceras = cabecera;
+                    // jsonObj.lcabeceras = cabecera;
                     resolve(jsonObj);
                     
                 })
